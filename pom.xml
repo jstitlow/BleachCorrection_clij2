@@ -12,18 +12,18 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.yourdomain</groupId>
+	<groupId>sc.fiji</groupId>
 	<!-- note: the artifactId must contain an underscore _ to make ImageJ handle it correctly.-->
-	<artifactId>yourplugin_</artifactId>
-	<version>0.1.0</version>
+	<artifactId>BleachCorrection2_</artifactId>
+	<version>1.1.0</version>
 
-	<name>YourPlugin</name>
-	<description>YourPlugin</description>
-	<url>http://yourdomain.com</url>
+	<name>BleachCorrection2</name>
+	<description>ImageJ bleach correction app for clij2</description>
+	<url>https://imagej.net/Bleach_Correction</url>
 	<inceptionYear>2020</inceptionYear>
 	<organization>
-		<name>Your organisation</name>
-		<url>http://yourdomain.com</url>
+		<name>Fiji</name>
+		<url>https://fiji.sc/</url>
 	</organization>
 	<licenses>
 		<license>
@@ -34,9 +34,9 @@
 
 	<developers>
 		<developer>
-			<id>yourid</id>
-			<name>You</name>
-			<url>https://yourdomain.com</url>
+			<id>cmci</id>
+			<name>Kota Miura</name>
+			<url>https://imagej.net/User:Miura</url>
 			<organization>Your organisation</organization>
 			<roles>
 				<role>developer</role>
@@ -74,7 +74,8 @@
 		<package-name>com.yourcompany</package-name>
 		<license.licenseName>bsd_3</license.licenseName>
 		<license.copyrightOwners>You</license.copyrightOwners>
-		<scijava.app.directory>C:/programs/fiji-win64/Fiji.app/</scijava.app.directory>
+		<!--<scijava.app.directory>C:/programs/fiji-win64/Fiji.app/</scijava.app.directory>-->
+		<imagej.app.directory>/Applications/Fiji.app</imagej.app.directory>
 		<!--<imagej.app.directory>/home/rhaase/programs/fiji/Fiji.app/</imagej.app.directory>-->
 	</properties>
 
@@ -86,6 +87,15 @@
 		<dependency>
 			<groupId>net.haesleinhuepf</groupId>
 			<artifactId>clij2_</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>CorrectBleach_</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
 		</dependency>
 	</dependencies>
 

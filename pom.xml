@@ -74,8 +74,7 @@
 		<package-name>com.yourcompany</package-name>
 		<license.licenseName>bsd_3</license.licenseName>
 		<license.copyrightOwners>You</license.copyrightOwners>
-		<!--<scijava.app.directory>C:/programs/fiji-win64/Fiji.app/</scijava.app.directory>-->
-		<imagej.app.directory>/Applications/Fiji.app</imagej.app.directory>
+		<scijava.app.directory>/Applications/Fiji.app/</scijava.app.directory>
 		<!--<imagej.app.directory>/home/rhaase/programs/fiji/Fiji.app/</imagej.app.directory>-->
 	</properties>
 

@@ -96,9 +96,6 @@ public class BleachCorrection2 extends AbstractCLIJ2Plugin implements CLIJMacroP
         double[] sumIntensities = clij.op().sumPixelsSliceBySlice(input);
         float[] correctionFactors = new float[sumIntensities.length];
 
-        //
-        System.out.println(input.getDimensions());
-
         // determine correction factors
         if (selectedMethod == 0) { // simple ratio
             // adapted from https://github.com/fiji/CorrectBleach/blob/master/src/main/java/emblcmci/BleachCorrection_SimpleRatio.java#L109
@@ -107,8 +104,7 @@ public class BleachCorrection2 extends AbstractCLIJ2Plugin implements CLIJMacroP
                 double currentInt = sumIntensities[i];
                 float ratio = (float)(referenceInt / currentInt);
                 correctionFactors[i] = ratio;
-                //IJ.log("frame"+ Integer.toString(i+1) + "mean int="+ currentInt +  " ratio=" + ratio);
-                System.out.println("frameeee"+ Integer.toString(i+1) + "mean int="+ currentInt +  " ratio=" + ratio);
+                IJ.log("frame"+ Integer.toString(i+1) + "mean int="+ currentInt +  " ratio=" + ratio);
             }
         } else if (selectedMethod == 1){ // exponential fit
             double[] yA = sumIntensities;
@@ -116,7 +112,7 @@ public class BleachCorrection2 extends AbstractCLIJ2Plugin implements CLIJMacroP
             long pixelsPerPlane = (input.getWidth() * input.getHeight());
             System.out.println("using int");
 
-            for (int i = 1; i < input.getDepth(); i++) {
+            for (int i = 0; i < input.getDepth(); i++) {
                 yA[i] = yA[i] / pixelsPerPlane;
                 xA[i] = i;
             }
